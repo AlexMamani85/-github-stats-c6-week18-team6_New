@@ -1,17 +1,17 @@
 import UnauthenticatedApp from "./UnauthenticatedApp";
 import AuthenticatedApp from "./AuthenticatedApp";
 import { useEffect, useState } from "react";
-import { tokenKey } from "./config";
+import { useAuth } from "./context/auth.context";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { user } = useAuth();
 
   useEffect(() => {
-    const token = sessionStorage.getItem(tokenKey);
-    if (token) {
+    if (user) {
       setIsAuthenticated(true);
     }
-  }, []);
+  }, [user]);
 
   return isAuthenticated ? <AuthenticatedApp /> : <UnauthenticatedApp />;
 }
