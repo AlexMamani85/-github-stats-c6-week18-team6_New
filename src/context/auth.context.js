@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 // import { tokenKey } from "../config";
-import * as auth from "./auth-service";
+import * as auth from "../services/auth-service";
 
 const AuthContext = createContext();
 
@@ -23,8 +23,8 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-const useAuth = () => {
+function useAuth() {
   return useContext(AuthContext);
-};
+}
 
 export { AuthProvider, useAuth };

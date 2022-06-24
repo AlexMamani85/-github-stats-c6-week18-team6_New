@@ -1,10 +1,9 @@
 import { tokenKey } from "../config";
-import { collectionClient } from "./collection-client";
+import collectionClient from "./collection-client";
 
-export function login(credentials) {
-  return collectionClient("/login", { body: credentials }).then((data) => {
-    const { token, ...user } = data;
-    sessionStorage.setItem(tokenKey, token);
-    return user;
-  });
+export async function login(credentials) {
+  const data = await collectionClient("/login", { body: credentials });
+  const { token, ...user } = data;
+  sessionStorage.setItem(tokenKey, token);
+  return user;
 }
