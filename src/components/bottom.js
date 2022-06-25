@@ -8,21 +8,23 @@ const BottomDiv = styled("div")`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  padding: 0 3rem;
   gap: 1rem;
   height: 66px;
   width: 100%;
+  border-top: 3px solid ${colors.gray.medium};
   position: absolute;
   bottom: 0;
 `;
 
 const linksData = [
   {
-    href: "search",
-    icon: <FaSearch size={25} />,
-  },
-  {
     href: "profile",
     icon: <FaUser size={25} />,
+  },
+  {
+    href: "search",
+    icon: <FaSearch size={25} />,
   },
   {
     href: "favorites",
@@ -33,11 +35,12 @@ const linksData = [
 const Bottom = () => {
   return (
     <BottomDiv>
-      {linksData.map((e) => (
+      {linksData.map((e, i) => (
         <NavLink
+          key={`bottom-link-${i + 1}`}
           to={e.href}
           style={({ isActive }) => ({
-            color: isActive ? colors.yellow[500] : colors.black,
+            color: isActive ? colors.yellow[500] : colors.gray.dark,
           })}
         >
           {e.icon}
