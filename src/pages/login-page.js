@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Input from "../components/input/input";
 import { useAuth } from "../context/auth.context";
-import { StyledButton, StyledForm } from "../styles/login";
-
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +22,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <StyledForm onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         <div>
           <Input
             type="email"
@@ -47,8 +45,8 @@ const LoginPage = () => {
             placeholder="********"
           />
         </div>
-        <StyledButton type="submit">Login</StyledButton>
-      </StyledForm>
+        <input type="submit" value="Login" />
+      </form>
     </div>
   );
 };
