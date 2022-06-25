@@ -80,4 +80,49 @@ export const global = css`
     color: ${colors.black};
     background-color: ${colors.background};
   }
+  .btn {
+    border: none;
+    outline: none;
+    background: none;
+    
+    :hover {
+      border-bottom: 2px solid;      
+      transition: all 0.5s;
+    }
+  
+  }
+  button {
+    cursor: pointer;
+    border: none;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .debug {
+    border: 2px red solid;
+  }
+
+  .mt-2 {
+    margin-top: 2rem;
+  }
+
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .font-blue {
+    color: #2D9CDB;
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  input {
+    border: none;
+  }
 `;
