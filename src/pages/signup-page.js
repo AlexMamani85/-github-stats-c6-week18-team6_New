@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/auth.context";
 import Input from "../components/input/input";
+import { StyledButton, StyledForm } from "../styles/login";
 
 const SingupPage = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ const SingupPage = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <StyledForm onSubmit={onSubmit}>
       <Input
         type="email"
         name="email"
@@ -56,8 +57,8 @@ const SingupPage = () => {
         label="Last Name"
         placeholder="Doe"
       />
-      <input type="submit" value="Signup" />
-    </form>
+      <StyledButton type="submit"> Create Account </StyledButton>
+    </StyledForm>
   );
 };
 

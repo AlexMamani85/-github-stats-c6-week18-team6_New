@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../components/input/input";
 import { useAuth } from "../context/auth.context";
+import { StyledButton, StyledForm } from "../styles/login";
 
 
 const LoginPage = () => {
@@ -23,7 +24,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <StyledForm onSubmit={onSubmit}>
         <div>
           <Input
             type="email"
@@ -46,8 +47,8 @@ const LoginPage = () => {
             placeholder="********"
           />
         </div>
-        <input type="submit" value="Login" />
-      </form>
+        <StyledButton type="submit">Login</StyledButton>
+      </StyledForm>
     </div>
   );
 };
