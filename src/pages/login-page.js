@@ -2,6 +2,7 @@ import { useState } from "react";
 import Input from "../components/input/input";
 import { useAuth } from "../context/auth.context";
 
+
 const LoginPage = () => {
   const [formData, setFormData] = useState({
     email: "",
