@@ -31,13 +31,13 @@ const UnauthenticatedApp = () => {
   };
 
   return (
-    <div>
+    <>
       <PageTitle>Welcome to Github Stats</PageTitle>
       {showLogin ? <LoginPage /> : <SingupPage />}
       <CustomLink onClick={handleLogin}>
         {showLogin ? "Create account" : "Login"}
       </CustomLink>
-    </div>
+    </>
   );
 };
 
