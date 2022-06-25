@@ -13,3 +13,10 @@ export const getUser = async () => {
   const { token, ...profile } = user;
   return profile;
 };
+
+export const updateUser = async (userData) => {
+  const updatedUser = await collectionClient("/profile", { method:'PATCH', body: userData });
+  const { token, ...user } = updatedUser;
+  sessionStorage.setItem(tokenKey, token);
+  return user;
+};
