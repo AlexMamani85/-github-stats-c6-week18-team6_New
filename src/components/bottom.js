@@ -40,7 +40,7 @@ const Bottom = () => {
           key={`bottom-link-${i + 1}`}
           to={e.href}
           style={({ isActive }) => ({
-            color: isActive ? colors.yellow[500] : colors.gray.dark,
+            color: isActive ? colors.black : colors.gray.dark,
           })}
         >
           {e.icon}
